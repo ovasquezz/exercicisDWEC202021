@@ -30,3 +30,14 @@ function entero(){
 
     document.getElementById("results").innerHTML = Math.trunc(input1);
 }
+
+//Numero part decimals   Escriu un codi que donat un numero real, mostri només els decimals.
+function decimales(){
+    input1 = Math.abs(document.getElementById("input1").value);
+
+    let decimal= (input1 - Math.floor(input1)).toFixed(4);
+
+    document.getElementById("results").innerHTML = decimal;
+
+}
+

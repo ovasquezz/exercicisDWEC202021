@@ -41,3 +41,11 @@ function decimales(){
 
 }
 
+//xx_amb 3 decimals   Escriu un codi que divideixi per 19 el número introduït i mostri el resultat exactament amb 3 decimals
+function division(){
+    input1 = (document.getElementById("input1").value);
+
+    division= (input1/19).toFixed(4):
+
+    document.getElementById("results").innerHTML = division;
+}

@@ -45,7 +45,7 @@ function decimales() {
 function division() {
     let input1 = document.getElementById("input1").value;
 
-    let division = (input1 / 19).toFixed(4);
+    let division = (input1 / 19).toFixed(3);
 
     document.getElementById("results").innerHTML = division;
 }

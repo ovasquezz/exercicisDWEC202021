@@ -165,6 +165,8 @@ function email() {
     let posicionArroba = input1.indexOf("@");
     let posicionPunto = input1.indexOf(".");
 
+
+    //No se si es la mejor manera de hacerlo pero funcionar funciona
     for (let i = 0; i < input1.length; i++) {
         if (input1[i] == "@") {
             contadorArroba++

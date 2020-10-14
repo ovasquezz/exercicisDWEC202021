@@ -136,24 +136,57 @@ function noEspacios() {
 
 //15frase amb guions   Escriu un codi que converteixi un String format per paraules separades per un o varis espais en un
 // String en què les paraules estiguin separades per un guió. 
-function guiones(){
+function guiones() {
     let input1 = document.getElementById("input1").value;
 
-    document.getElementById("results").innerHTML = input1.replace(/\s+/g,"-");
+    document.getElementById("results").innerHTML = input1.replace(/\s+/g, "-");
     // \s+ se refiere a todos los espacios en blanco
 }
 
 //16 Acronim     Escriu un codi que agafi totes les paraules d’un String i construeixi un acrònim en majúscules.
-function acronimo(){
+function acronimo() {
     let input1 = document.getElementById("input1").value;
     let acronimo = "";
 
     acronimo += input1.charAt(0);
     for (let i = 0; i < input1.length; i++) {
         if (input1[i] == " ") {
-            acronimo += input1[i+1];
-        }  
+            acronimo += input1[i + 1];
+        }
     }
 
     document.getElementById("results").innerHTML = acronimo.toUpperCase();
+}
+
+//17 Email     Escriu un codi que validi en un correu electrònic només les següents coses: 
+function email() {
+    let input1 = document.getElementById("input1").value;
+    let contadorArroba = 0;
+    let posicionArroba = input1.indexOf("@");
+    let posicionPunto = input1.indexOf(".");
+
+    for (let i = 0; i < input1.length; i++) {
+        if (input1[i] == "@") {
+            contadorArroba++
+            if (contadorArroba == 1) {
+                if (posicionArroba < posicionPunto) {
+                    if (input1.search(/.org|.net|.com/) != -1) {
+                        if (input1.endsWith(".org")||input1.endsWith(".net")||input1.endsWith(".com") == true) {
+                            document.getElementById("results").innerHTML = "Es una dirreccion de correo valida"
+                        } else {
+                            document.getElementById("results").innerHTML = "No es una direccion de correo valida"
+                        }
+                    } else {
+                        document.getElementById("results").innerHTML = "Extension no valida"
+                    }
+                } else {
+                    document.getElementById("results").innerHTML = "La extension no esta en el lugar correcto/Falta extension"
+                }
+            } else {
+                document.getElementById("results").innerHTML = "El email introducido tiene mas de un @"
+            }
+        }
+
+    }
+
 }

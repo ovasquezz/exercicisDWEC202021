@@ -171,7 +171,7 @@ function email() {
             if (contadorArroba == 1) {
                 if (posicionArroba < posicionPunto) {
                     if (input1.search(/.org|.net|.com/) != -1) {
-                        if (input1.endsWith(".org")||input1.endsWith(".net")||input1.endsWith(".com") == true) {
+                        if (input1.endsWith(".org") || input1.endsWith(".net") || input1.endsWith(".com") == true) {
                             document.getElementById("results").innerHTML = "Es una dirreccion de correo valida"
                         } else {
                             document.getElementById("results").innerHTML = "No es una direccion de correo valida"
